@@ -27,7 +27,7 @@ Matrix size : 16384 x 16384
   m16384-n16384-k16384        4   2000.953ms(100.00%)    500.238ms    501.305ms    497.164ms
 ```
 
-- Unifyed memory
+- Unified memory
 ```
 #####################################
 #       CULiP Profiling Result      #
