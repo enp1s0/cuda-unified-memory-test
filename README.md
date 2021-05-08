@@ -9,9 +9,9 @@ make
 ## Result
 
 ```
-Matrix size : 32768 x 32768
-[ mem] 661933us   // cudaMemcpy + cublasSgemm
-[umem] 61247415us // (implicit memcpy + ) cublasSgemm
+Matrix size : 16384 x 16384
+[umem] 2255408us // cudaMemcpy H2D + cublasSgemm
+[ mem] 2233257us // (implicit cudaMemcpy HtoD) + cublasSgemm
 ```
 
 ### CULiP Result
@@ -22,9 +22,9 @@ Matrix size : 32768 x 32768
 #  https://github.com/enp1s0/CULiP  #
 #####################################
 
-- cublasSgemm_v2 : [5264 ns; 5.264000e-06 s;100.00%]
+- cublasSgemm_v2 : [2000953373 ns; 2.000953e+00 s;100.00%]
                 params    count                   sum          avg          max          min
-  m32768-n32768-k32768        4      0.005ms(100.00%)      0.001ms      0.004ms      0.000ms
+  m16384-n16384-k16384        4   2000.953ms(100.00%)    500.238ms    501.305ms    497.164ms
 ```
 
 - Unifyed memory
@@ -34,9 +34,9 @@ Matrix size : 32768 x 32768
 #  https://github.com/enp1s0/CULiP  #
 #####################################
 
-- cublasSgemm_v2 : [61247343327 ns; 6.124734e+01 s;100.00%]
+- cublasSgemm_v2 : [2256737639 ns; 2.256738e+00 s;100.00%]
                 params    count                   sum          avg          max          min
-  m32768-n32768-k32768        4  61247.343ms(100.00%)  15311.836ms  15363.631ms  15263.454ms
+  m16384-n16384-k16384        4   2256.738ms(100.00%)    564.184ms    767.031ms    496.519ms
 ```
 
 ### Test environment
